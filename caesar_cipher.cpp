@@ -28,29 +28,29 @@ string caesar_cipher (string original_message, int shift_amount) {
 		
 		if(encrypted_message.at(i) != ' ') {
 		    
-    		if(encrypted_message.at(i) >= 65 || encrypted_message.at(i) <= 90) {
-    		    
-    			if(encrypted_message.at(i) + short_shift > 90) {
-    				encrypted_message.at(i) = 65 + (short_shift - (90 - int(encrypted_message.at(i)))) - 1;
-    			}
-    			
-    			else{
-    			    encrypted_message.at(i) = encrypted_message.at(i) + short_shift;
-    			}
-    			
-    		}
-    		
-    		else if(encrypted_message.at(i) >= 97 || encrypted_message.at(i) <= 122) {
-    		    
-    			if(encrypted_message.at(i) + short_shift > 122) {
-    				encrypted_message.at(i) = 97 + (short_shift - (122 - int(encrypted_message.at(i)))) - 1;
-    			}
-    			
-    			else{
-    			    encrypted_message.at(i) = encrypted_message.at(i) + short_shift;
-    			}
-    			
-    		}
+			if(encrypted_message.at(i) >= 65 || encrypted_message.at(i) <= 90) {
+
+				if(encrypted_message.at(i) + short_shift > 90) {
+					encrypted_message.at(i) = 65 + (short_shift - (90 - int(encrypted_message.at(i)))) - 1;
+				}
+
+				else{
+				    encrypted_message.at(i) = encrypted_message.at(i) + short_shift;
+				}
+
+			}
+
+			else if(encrypted_message.at(i) >= 97 || encrypted_message.at(i) <= 122) {
+
+				if(encrypted_message.at(i) + short_shift > 122) {
+					encrypted_message.at(i) = 97 + (short_shift - (122 - int(encrypted_message.at(i)))) - 1;
+				}
+
+				else{
+				    encrypted_message.at(i) = encrypted_message.at(i) + short_shift;
+				}
+
+			}
     		
 		}
 		
