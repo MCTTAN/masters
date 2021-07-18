@@ -26,32 +26,19 @@ string caesar_cipher (string original_message, int shift_amount) {
 	
 	for(int i = 0; i <= encrypted_message.length() - 1; ++i) {
 		
-		if(encrypted_message.at(i) != ' ') {
+		if( (encrypted_message.at(i) == ' ') || (encrypted_message.at(i) == '-') ) { }
 		    
-			if(encrypted_message.at(i) >= 65 || encrypted_message.at(i) <= 90) {
-
-				if(encrypted_message.at(i) + short_shift > 90) {
-					encrypted_message.at(i) = 65 + (short_shift - (90 - int(encrypted_message.at(i)))) - 1;
-				}
-
-				else{
-				    encrypted_message.at(i) = encrypted_message.at(i) + short_shift;
-				}
-
-			}
-
-			else if(encrypted_message.at(i) >= 97 || encrypted_message.at(i) <= 122) {
-
-				if(encrypted_message.at(i) + short_shift > 122) {
-					encrypted_message.at(i) = 97 + (short_shift - (122 - int(encrypted_message.at(i)))) - 1;
-				}
-
-				else{
-				    encrypted_message.at(i) = encrypted_message.at(i) + short_shift;
-				}
-
-			}
-    		
+		else if(encrypted_message.at(i) >= 'a' || encrypted_message.at(i) <= 'z' || encrypted_message.at(i) >= 'A' || encrypted_message.at(i) <= 'Z') {
+		    
+		    if(encrypted_message.at(i) + short_shift > 'z' || encrypted_message.at(i) + short_shift > 'Z')
+		    {
+		        encrypted_message.at(i) = short_shift + int(encrypted_message.at(i)) - 26;
+		    }
+		    
+		    else {
+		        encrypted_message.at(i) = encrypted_message.at(i) + short_shift;
+		    }
+		    
 		}
 		
 	}
